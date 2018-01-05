@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Concert+One');
+
+$font: 'Concert One', cursive;
+
+body {
+	font-family: $font;
+}
+
+.board {
+	.create-column {
+		font-size: 20px;
+		padding: 10px;
+	}
+	.column-container {
+		height: 100vh;
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		align-content: stretch;
+		
+		.column {
+			flex: auto;
+			display: flex;
+			flex-direction: column;
+			padding: 10px;
+			margin: 10px;
+			border: 2px solid #043651;
+			border-radius: 5px;
+			box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5);
+
+			.btn-delete {
+				order: 1;
+				align-self: flex-end;
+				background-color: inherit;
+				color: #001A25;
+			}
+
+			.column-title {
+				order: 1;
+				margin-top: 0;
+			}
+
+			.add-card {
+				order: 3;
+			}
+			.card {
+				margin: 10px 0;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				background-color: #E4DD44;
+				border-radius: 5px;
+				box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5);
+				.btn-delete {
+					align-self: flex-start;
+				}
+			}
+
+			button {
+				background-color: #043651;
+				border-radius: 5px;
+			}
+
+			.column-card-list {
+				order: 4;
+				min-height: 50vh;
+				padding-left: 20px;
+			}
+		}
+
+		button {
+			color: white;
+			&:hover {
+				color: inherit;
+				background-color: white;
+			}
+		}
+	}
+
+	button {
+		background-color: transparent;
+		border: none;
+		border-radius: 5px;
+		font-family: $font;
+		color: #043651;
+		cursor: pointer;
+		box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5);
+		&:hover {
+			color: white;
+			background-color: #043651;
+		}
+	}
+}
