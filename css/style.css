@@ -96,4 +96,8 @@ body {
     color: white;
     background-color: #043651; }
 
+.column ul {
+  min-height: 50px;
+}
+
 /*# sourceMappingURL=style.css.map */

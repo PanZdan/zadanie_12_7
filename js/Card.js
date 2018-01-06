@@ -7,7 +7,7 @@ function Card(id, name) {
 	this.element = createCard();
 
 	function createCard() {
-		var card = $('<li class="card"></li>');
+		var card = $('<li class="card" data-card-id="' + self.id + '"></li>');
 		var cardDeleteBtn = $('<button class="btn-delete">x</button>');
 		var cardDescription = $('<p class="card-description"></p>');
 		
@@ -29,6 +29,16 @@ Card.prototype = {
 	      method: 'DELETE',
 	      success: function(){
 	        self.element.remove();
+	        cards = cards.filter(function(card) {
+	        	return card.id !== self.id;
+	        });
+	        // for (var i = 0; i < cards.length; i++) {
+	        // 	var card = cards[i];
+	        // 	if (card.id === self.id) {
+	        // 		cards.remove(card);
+	        // 		break;
+	        // 	}
+	        // }
 	      }
 	    });
 	}

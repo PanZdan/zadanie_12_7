@@ -7,7 +7,7 @@ function Column(id, name) {
 
 	function createColumn() {
 		// TWORZENIE NOWYCH WĘZŁÓW
-		var column = $('<div class="column"></div>');
+		var column = $('<div class="column" data-column-id="' + self.id + '"></div>');
 		var columnTitle = $('<h2 class="column-title">' + self.name + '</h2>');
 		var columnCardList = $('<ul class="card-list"></ul>');
 		var columnDelete = $('<button class="btn-delete">x</button>');
@@ -31,6 +31,7 @@ function Column(id, name) {
 			    success: function(response) {
 			        var card = new Card(response.id, cardName);
 			        self.createCard(card);
+			        cards.push(card);
 			    }
 			});
 		});
@@ -54,6 +55,9 @@ Column.prototype = {
 	      method: 'DELETE',
 	      success: function(response){
 	        self.element.remove();
+	        columns = columns.filter(function(column) {
+	        	return column.id !== self.id;
+	        });
 	      }
 	    });
 	 }
