@@ -4,67 +4,76 @@ $font: 'Concert One', cursive;
 
 body {
 	font-family: $font;
+	background-color: #505050;
 }
 
 .board {
+	h1 {
+		text-align: center;
+		color: #fff;
+	}
 	.create-column {
 		font-size: 20px;
 		padding: 10px;
+		display: flex;
+		margin: 0 auto;
+		margin-bottom: 30px;
 	}
 	.column-container {
 		height: 100vh;
 		display: flex;
-		flex-direction: row;
+		/*flex-direction: row;*/
 		align-items: stretch;
 		align-content: stretch;
-		
 		.column {
 			flex: auto;
 			display: flex;
 			flex-direction: column;
 			padding: 10px;
 			margin: 10px;
+			background-color: #fff;
 			border: 2px solid #043651;
 			border-radius: 5px;
 			box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5);
-
+			.column-title {
+				margin-top: 0;
+			}
 			.btn-delete {
 				order: 1;
-				align-self: flex-end;
+				align-self: flex-start;
 				background-color: inherit;
 				color: #001A25;
 			}
-
-			.column-title {
-				order: 1;
-				margin-top: 0;
+			.column-add-card {
+				padding: 10px;
+				&:hover {
+					background-color: #505050;
+					color: #fff;
+				}
 			}
-
-			.add-card {
-				order: 3;
-			}
-			.card {
-				margin: 10px 0;
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				background-color: #E4DD44;
-				border-radius: 5px;
-				box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5);
-				.btn-delete {
-					align-self: flex-start;
+			.card-list {
+				min-height: 50px;
+				/*list-style: none;*/
+				.card {
+					margin: 10px 0;
+					padding: 5px;
+					display: flex;
+					/*flex-direction: row;*/
+					justify-content: center;
+					background-color: #8bf4b7;
+					border-radius: 5px;
+					box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5);
+					.card-description {
+						width: 100%;
+						text-align: center;
+						padding: 5px;
+					}
 				}
 			}
 
 			button {
 				background-color: #043651;
 				border-radius: 5px;
-			}
-
-			.column-card-list {
-				order: 4;
-				min-height: 50vh;
-				padding-left: 20px;
 			}
 		}
 
@@ -78,16 +87,16 @@ body {
 	}
 
 	button {
-		background-color: transparent;
+		background-color: #043651;
 		border: none;
 		border-radius: 5px;
 		font-family: $font;
-		color: #043651;
+		color: #fff;
 		cursor: pointer;
 		box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5);
 		&:hover {
 			color: white;
-			background-color: #043651;
+			background-color: transparent;
 		}
 	}
 }

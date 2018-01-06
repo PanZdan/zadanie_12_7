@@ -1,19 +1,25 @@
 @import url("https://fonts.googleapis.com/css?family=Concert+One");
 body {
-  font-family: "Concert One", cursive; }
+  font-family: "Concert One", cursive;
+  background-color: #505050; }
 
+.board h1 {
+  text-align: center;
+  color: #fff; }
 .board .create-column {
   font-size: 20px;
-  padding: 10px; }
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 30px; }
 .board .column-container {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  /*flex-direction: row;*/
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -32,68 +38,63 @@ body {
             flex-direction: column;
     padding: 10px;
     margin: 10px;
+    background-color: #fff;
     border: 2px solid #043651;
     border-radius: 5px;
     box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5); }
+    .board .column-container .column .column-title {
+      margin-top: 0; }
     .board .column-container .column .btn-delete {
       -webkit-box-ordinal-group: 2;
           -ms-flex-order: 1;
               order: 1;
-      -ms-flex-item-align: end;
-          align-self: flex-end;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
       background-color: inherit;
       color: #001A25; }
-    .board .column-container .column .column-title {
-      -webkit-box-ordinal-group: 2;
-          -ms-flex-order: 1;
-              order: 1;
-      margin-top: 0; }
-    .board .column-container .column .add-card {
-      -webkit-box-ordinal-group: 4;
-          -ms-flex-order: 3;
-              order: 3; }
-    .board .column-container .column .card {
-      margin: 10px 0;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      background-color: #E4DD44;
-      border-radius: 5px;
-      box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5); }
-      .board .column-container .column .card .btn-delete {
-        -ms-flex-item-align: start;
-            align-self: flex-start; }
+    .board .column-container .column .column-add-card {
+      padding: 10px; }
+      .board .column-container .column .column-add-card:hover {
+        background-color: #505050;
+        color: #fff; }
+    .board .column-container .column .card-list {
+      min-height: 50px;
+      /*list-style: none;*/ }
+      .board .column-container .column .card-list .card {
+        margin: 10px 0;
+        padding: 5px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        /*flex-direction: row;*/
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        background-color: #8bf4b7;
+        border-radius: 5px;
+        box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5); }
+        .board .column-container .column .card-list .card .card-description {
+          width: 100%;
+          text-align: center;
+          padding: 5px; }
     .board .column-container .column button {
       background-color: #043651;
       border-radius: 5px; }
-    .board .column-container .column .column-card-list {
-      -webkit-box-ordinal-group: 5;
-          -ms-flex-order: 4;
-              order: 4;
-      min-height: 50vh;
-      padding-left: 20px; }
   .board .column-container button {
     color: white; }
     .board .column-container button:hover {
       color: inherit;
       background-color: white; }
 .board button {
-  background-color: transparent;
+  background-color: #043651;
   border: none;
   border-radius: 5px;
   font-family: "Concert One", cursive;
-  color: #043651;
+  color: #fff;
   cursor: pointer;
   box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5); }
   .board button:hover {
     color: white;
-    background-color: #043651; }
+    background-color: transparent; }
 
 /*# sourceMappingURL=style.css.map */

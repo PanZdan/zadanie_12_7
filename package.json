@@ -14,7 +14,7 @@
     "watch": "parallelshell \"npm run watch:sassprefixer\" \"npm run watch:browser-sync\" ",
     "watch:sass": "sass --watch scss/style.scss:css/style.css",
     "watch:autoprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.prefixed.css css/style.css",
-    "watch:browser-sync": "glob-run browser-sync start --server --files css/*.css *.html",
+    "watch:browser-sync": "glob-run browser-sync start --server --files css/*.css *.html js/*.js",
     "build:sassprefixer": "npm run build:sass && npm run build:autoprefixer",
     "watch:sassprefixer": "onchange -d 100 scss/*.scss -- npm run build:sassprefixer"
   },
