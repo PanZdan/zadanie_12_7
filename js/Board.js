@@ -19,7 +19,6 @@ $('.create-column')
     		success: function(response){
     			var column = new Column(response.id, columnName);
     			board.createColumn(column);
-          columns.push(column);
           	}
         });
 });
@@ -29,24 +28,19 @@ function initSortable() {
       placeholder: 'card-placeholder',
       update: function(event, ui) {
         if (ui.sender) {
-          var cardId = ui.item.attr('data-card-id');
-          var card = cards.find(function(card) {
-            return card.id == cardId;
-          });
+          var card = ui.item;
+          var cardId = card.attr('data-card-id');
+          var cardName = card.find('.card-description').text();
 
-          var columnId = ui.item
-            .parent()
+          var columnId = card.parent()
             .parent()
             .attr('data-column-id');
-          var column = columns.find(function(column) {
-            return column.id == columnId;
-          });
 
           $.ajax({
             url: baseUrl + '/card/' + cardId,
             method: 'PUT',
             data: {
-              name: card.name,
+              name: cardName,
               bootcamp_kanban_column_id: columnId
             },
             success: function(response) {

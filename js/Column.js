@@ -31,7 +31,6 @@ function Column(id, name) {
 			    success: function(response) {
 			        var card = new Card(response.id, cardName);
 			        self.createCard(card);
-			        cards.push(card);
 			    }
 			});
 		});
@@ -55,9 +54,6 @@ Column.prototype = {
 	      method: 'DELETE',
 	      success: function(response){
 	        self.element.remove();
-	        columns = columns.filter(function(column) {
-	        	return column.id !== self.id;
-	        });
 	      }
 	    });
 	 }

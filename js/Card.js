@@ -29,16 +29,6 @@ Card.prototype = {
 	      method: 'DELETE',
 	      success: function(){
 	        self.element.remove();
-	        cards = cards.filter(function(card) {
-	        	return card.id !== self.id;
-	        });
-	        // for (var i = 0; i < cards.length; i++) {
-	        // 	var card = cards[i];
-	        // 	if (card.id === self.id) {
-	        // 		cards.remove(card);
-	        // 		break;
-	        // 	}
-	        // }
 	      }
 	    });
 	}
