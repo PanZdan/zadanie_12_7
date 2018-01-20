@@ -39,7 +39,6 @@ body {
     padding: 10px;
     margin: 10px;
     background-color: #fff;
-    border: 2px solid #043651;
     border-radius: 5px;
     box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5); }
     .board .column-container .column .column-title {
@@ -78,9 +77,7 @@ body {
               -ms-flex-order: 1;
                   order: 1;
           -ms-flex-item-align: start;
-              align-self: flex-start;
-          background-color: inherit;
-          color: #001A25; }
+              align-self: flex-start; }
         .board .column-container .column .card-list .card .card-description {
           width: 100%;
           text-align: center;
